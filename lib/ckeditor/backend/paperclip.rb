@@ -43,8 +43,8 @@ module Ckeditor
           end
 
           def extract_content_type
-            path = file.nil? ? nil : file.path
-            self.data_content_type = Utils::ContentTypeDetector.new(path).detect
+            file_path = file.nil? ? path : file.path
+            self.data_content_type = Utils::ContentTypeDetector.new(file_path).detect
           end
       end
     end
